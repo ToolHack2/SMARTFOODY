@@ -19,6 +19,7 @@ import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,24 +27,20 @@ import com.example.user.smartfoody.R;
 
 import com.example.user.smartfoody.View.ViewVideo;
 import com.google.zxing.Result;
-
-
-import me.dm7.barcodescanner.zxing.ZXingScannerView;
-
-
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 
 /**
  * Created by User on 11/27/2017.
  */
 
-public class CANH extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class CANH extends AppCompatActivity {
 
     BottomNavigationView home;
-    private ZXingScannerView scannerView;
 
-    SurfaceView view;
 
+    Button scan;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,32 +48,43 @@ public class CANH extends AppCompatActivity implements ZXingScannerView.ResultHa
         setContentView(R.layout.canh_activity);
 
         home = (BottomNavigationView)findViewById(R.id.menucanh);
-        view = (SurfaceView)findViewById(R.id.qrview);
-        scan(view);
+        scan = (Button)findViewById(R.id.btnscan);
+        final Activity activity = this;
+        scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentIntegrator integrator = new IntentIntegrator(activity);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                integrator.setPrompt("Please scan QR code to view more");
+                integrator.setCameraId(0);
+                integrator.setBeepEnabled(false);
+                integrator.setBarcodeImageEnabled(false);
+                integrator.initiateScan();
+            }
+        });
 
-    }
-    public void scan(View view)
-    {
-        scannerView = new ZXingScannerView(getApplicationContext());
-        setContentView(scannerView);
-        scannerView.setResultHandler(this);
-        scannerView.startCamera();
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        scannerView.stopCamera();
-    }
-
-    @Override
-    public void handleResult(Result result) {
-        Toast.makeText(getApplicationContext(), result.getText(), Toast.LENGTH_SHORT).show();
-        String value = result.getText();
-        Intent toview = new Intent(CANH.this, ViewVideo.class);
-        toview.putExtra("value", value);
-        startActivity(toview);
-        scannerView.resumeCameraPreview(this);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null)
+        {
+            if (result.getContents() == null)
+            {
+                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                String value = result.getContents();
+                Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
+                Intent toview = new Intent(CANH.this, ViewVideo.class);
+                //toview.putExtra("value", value);
+                startActivity(toview);
+            }
+        }
+        else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
 
     }
 }

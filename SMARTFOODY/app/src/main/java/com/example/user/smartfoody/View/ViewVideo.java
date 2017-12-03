@@ -3,6 +3,12 @@ package com.example.user.smartfoody.View;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.user.smartfoody.R;
@@ -20,6 +26,9 @@ public class ViewVideo extends YouTubeBaseActivity implements YouTubePlayer.OnIn
     public static final String API_KEY = "AIzaSyDO13t9y0dfJL7KaAYZixzXc-PSXvvQ-dU";
     public static final String VIDEO_ID = "AJ9Jg1PwRJo";
     private YouTubePlayerView youtubeView;
+    private Button Click;
+    private LinearLayout layout;
+    private boolean up = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,6 +38,34 @@ public class ViewVideo extends YouTubeBaseActivity implements YouTubePlayer.OnIn
         //init
         youtubeView = (YouTubePlayerView) findViewById(R.id.youtubevideo);
         youtubeView.initialize(API_KEY, this);
+
+        //
+        final Animation slide_down = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_down);
+        final Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_up);
+        //
+        layout = (LinearLayout)findViewById(R.id.frameup);
+        Click = (Button)findViewById(R.id.click);
+        Click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (up == false) {
+                    layout.setVisibility(View.VISIBLE);
+                    layout.startAnimation(slide_down);
+                    Click.setBackgroundResource(R.drawable.ic_up);
+                    up = true;
+                }
+                else
+                {
+                    layout.setVisibility(View.GONE);
+                    layout.startAnimation(slide_up);
+                    Click.setBackgroundResource(R.drawable.ic_down);
+                    up = false;
+                }
+            }
+        });
+
     }
 
     @Override
@@ -107,6 +144,7 @@ public class ViewVideo extends YouTubeBaseActivity implements YouTubePlayer.OnIn
 
         }
     };
+
 
 
 }
