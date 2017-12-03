@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="#1ed2f5">
+
+        <ImageView
+            android:id="@+id/imgcanh"
+            android:layout_width="170dp"
+            android:layout_height="250dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="24dp"
+            android:background="#d6c4c4"
+            android:src="@drawable/moncanh"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/imgkho"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.512" />
+
+        <ImageView
+            android:id="@+id/imgkho"
+            android:layout_width="170dp"
+            android:layout_height="250dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="24dp"
+            android:background="#d6c4c4"
+            android:src="@drawable/monkho"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgxao"
+            android:layout_width="170dp"
+            android:layout_height="250dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:background="#d6c4c4"
+            android:src="@drawable/monxao"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/imgrau"
+            app:layout_constraintTop_toBottomOf="@+id/imgcanh"
+            app:layout_constraintVertical_bias="0.504"
+            app:layout_constraintHorizontal_bias="0.513" />
+
+        <ImageView
+            android:id="@+id/imgrau"
+            android:layout_width="170dp"
+            android:layout_height="250dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:background="#d6c4c4"
+            android:src="@drawable/monrau"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgkho"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/txtcanh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Món Canh"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgcanh"
+            app:layout_constraintLeft_toLeftOf="@+id/imgcanh"
+            app:layout_constraintRight_toRightOf="@+id/imgcanh"
+            app:layout_constraintTop_toTopOf="@+id/imgcanh"
+            app:layout_constraintVertical_bias="0.95" />
+
+        <TextView
+            android:id="@+id/txtkho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Món Kho"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgkho"
+            app:layout_constraintLeft_toLeftOf="@+id/imgkho"
+            app:layout_constraintRight_toRightOf="@+id/imgkho"
+            app:layout_constraintTop_toTopOf="@+id/imgkho"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.95" />
+
+        <TextView
+            android:id="@+id/txtxao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Món Xào"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgxao"
+            app:layout_constraintLeft_toLeftOf="@+id/imgxao"
+            app:layout_constraintRight_toRightOf="@+id/imgxao"
+            app:layout_constraintTop_toTopOf="@+id/imgxao"
+            app:layout_constraintVertical_bias="0.95" />
+
+        <TextView
+            android:id="@+id/txtrau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Món Rau"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgrau"
+            app:layout_constraintLeft_toLeftOf="@+id/imgrau"
+            app:layout_constraintRight_toRightOf="@+id/imgrau"
+            app:layout_constraintTop_toTopOf="@+id/imgrau"
+            app:layout_constraintVertical_bias="0.95" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
