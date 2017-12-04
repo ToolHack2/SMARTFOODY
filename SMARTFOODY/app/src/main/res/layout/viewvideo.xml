@@ -20,7 +20,7 @@
         <LinearLayout
             android:id="@+id/frameup"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="#f7f4f4"
             android:orientation="vertical"
@@ -30,9 +30,11 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#deac19"
                 android:text="Cháo sườn"
                 android:textAlignment="center"
                 android:textColor="@color/black"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -40,32 +42,147 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView4"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="#d88ced2b"
-                    android:text="Thành phần: sườn non, gạo, hành"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:background="@drawable/s1">
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="#d8e97c1c"
-                    android:text="Xuất xứ: trang trại heo chất lượng cao ABC"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/txtname1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-                <TextView
-                    android:id="@+id/textView6"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginStart="14dp"
+                        android:text="Thành Phần"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ct1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/txtname1"
+                        android:layout_marginLeft="26dp"
+                        android:layout_marginStart="26dp"
+                        android:layout_toEndOf="@+id/txtname1"
+                        android:layout_toRightOf="@+id/txtname1"
+                        android:text="Sườn, gạo, hành lá, tiêu"
+                        android:textColor="@color/zxing_custom_result_view"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="#d8f5e03d"
-                    android:text="Giá trị dinh dưỡng: chứa nhiều chất đạm, tốt cho sức khỏe"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:background="@drawable/s2">
+
+                    <TextView
+                        android:id="@+id/txtname2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="Xuất xứ"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ct2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="59dp"
+                        android:layout_marginStart="59dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/txtname2"
+                        android:layout_toRightOf="@+id/txtname2"
+                        android:text="Trang trại heo tiêu chuẩn Hà Lan VINAHEO"
+                        android:textColor="@color/zxing_custom_result_view"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/s3">
+
+                    <TextView
+                        android:id="@+id/txtname3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="Dinh dưỡng"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ct3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/txtname3"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_toEndOf="@+id/txtname3"
+                        android:layout_toRightOf="@+id/txtname3"
+                        android:text="Giàu chất đạm"
+                        android:textColor="@color/zxing_custom_result_view"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/s4">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="Dược học"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ct4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="44dp"
+                        android:layout_marginStart="44dp"
+                        android:layout_toEndOf="@+id/textView2"
+                        android:layout_toRightOf="@+id/textView2"
+                        android:text="Dùng cho người suy nhược do mệt mỏi, chán ăn"
+                        android:textColor="@color/zxing_custom_result_view"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
 
             </LinearLayout>
 
