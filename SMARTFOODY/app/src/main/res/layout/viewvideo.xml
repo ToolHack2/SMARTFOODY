@@ -8,7 +8,7 @@
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtubevideo"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="250dp">
 
     </com.google.android.youtube.player.YouTubePlayerView>
 
@@ -193,7 +193,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/ic_down" />
+            android:background="@drawable/ic_down"
+            android:backgroundTint="#ab9a9a"/>
 
         <TextView
             android:id="@+id/textView7"
@@ -201,16 +202,21 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="7dp"
-            android:background="#d89e7d76"
+            android:background="#b5bab5b4"
             android:text="Video liên quan khác"
-            android:textColor="?attr/textColorAlertDialogListItem"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            android:textColor="?android:attr/statusBarColor"
+            android:textSize="25dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"></LinearLayout>
+            android:orientation="horizontal">
+
+            <ListView
+                android:id="@+id/listvideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
     </LinearLayout>
 
