@@ -38,8 +38,6 @@ import com.google.zxing.integration.android.IntentResult;
 public class CANH extends AppCompatActivity {
 
     BottomNavigationView home;
-
-
     Button scan;
 
     @Override
